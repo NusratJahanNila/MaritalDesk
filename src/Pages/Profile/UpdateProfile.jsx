@@ -41,6 +41,7 @@ const UpdateProfile = () => {
                                 name='name'
                                 type="text"
                                 placeholder="Name"
+                                defaultValue={user.displayName || ''}
                                 className="w-full border border-gray-300 rounded-lg p-3 "
                             />
                             {/* PhotoURL */}

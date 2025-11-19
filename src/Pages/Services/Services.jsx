@@ -48,7 +48,7 @@ const Services = () => {
                 </p>
             </div>
 
-            <div className="grid md:grid-cols-3 lg:grid-cols-4 grid-cols-1 gap-8" data-aos="fade-up">
+            <div className="grid md:grid-cols-3 lg:grid-cols-4 grid-cols-1 md:gap-4 lg:gap-8 gap-3" data-aos="fade-up">
                 {steps.map((step) => (
                     <div
                         key={step.id}

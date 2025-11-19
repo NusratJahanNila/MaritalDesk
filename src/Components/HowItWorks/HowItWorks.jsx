@@ -17,31 +17,31 @@ const HowItWorks = () => {
   const steps = [
     {
       id: 1,
-      icon: <UserPlus className="w-10 h-10 text-green-700" />,
+      icon: <UserPlus className="w-10 h-10 text-yellow-500" />,
       title: "Create an Account",
       desc: "Register with your NID, email, and password to access your secure dashboard.",
     },
     {
       id: 2,
-      icon: <FileText className="w-10 h-10 text-green-700" />,
+      icon: <FileText className="w-10 h-10 text-yellow-500" />,
       title: "Apply for Marriage or Divorce",
       desc: "Choose the desired service and fill out the online application form accurately.",
     },
     {
       id: 3,
-      icon: <ClipboardCheck className="w-10 h-10 text-green-700" />,
+      icon: <ClipboardCheck className="w-10 h-10 text-yellow-500" />,
       title: "Kazi Verification",
       desc: "Your Kazi reviews and verifies the information and documents you submit.",
     },
     {
       id: 4,
-      icon: <Shield className="w-10 h-10 text-green-700" />,
+      icon: <Shield className="w-10 h-10 text-yellow-500" />,
       title: "Admin Approval",
       desc: "The admin validates the application and approves or rejects it after review.",
     },
     {
       id: 5,
-      icon: <Download className="w-10 h-10 text-green-700" />,
+      icon: <Download className="w-10 h-10 text-yellow-500" />,
       title: "Get Your Certificate",
       desc: "Once approved, download your official marriage or divorce certificate with QR verification.",
     },
@@ -72,12 +72,12 @@ const HowItWorks = () => {
         ))}
       </div>
 
-      <div className="mt-12 text-center">
+      {/* <div className="mt-12 text-center">
         <CheckCircle className="w-10 h-10 text-green-700 inline-block mb-3" />
         <p className="text-gray-700">
           All data is protected and verified through official Kazi and Admin channels.
         </p>
-      </div>
+      </div> */}
     </section>
   );
 };

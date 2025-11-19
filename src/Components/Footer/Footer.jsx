@@ -4,7 +4,7 @@ const Footer = () => {
     return (
         <div className=' '>
             <footer className=" bg-black text-white p-10 ">
-                <div className='footer sm:footer-horizontal max-w-6xl mx-auto flex justify-between items-center'>
+                <div className='footer sm:footer-horizontal max-w-6xl mx-auto md:flex justify-between items-center'>
                     <aside className="">
                         <img src={logoDarkImg} alt="" className='w-20' />
                         <p>

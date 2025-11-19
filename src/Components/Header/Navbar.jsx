@@ -82,7 +82,7 @@ const Navbar = () => {
                             className='w-15 hidden md:block'
                         />
                         <span className='text-4xl font-light text-orange-600'>|</span>
-                        <span className='font-bold text-2xl text-green-800'>MaritalDesk</span>
+                        <span className='font-bold sm:text-2xl text-green-800'>MaritalDesk</span>
                     </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
@@ -104,7 +104,7 @@ const Navbar = () => {
                             </div> : <Link to='/auth/login' className="btn bg-gradient-to-r from-[#013223] to-[#006747] text-white">Login</Link>
                         }
                     </div>
-                    <label className="swap swap-rotate ">
+                    <label className="swap swap-rotate hidden md:inline-block">
                         {/* this hidden checkbox controls the state */}
                         <input type="checkbox" className="theme-controller" value="dark" />
 

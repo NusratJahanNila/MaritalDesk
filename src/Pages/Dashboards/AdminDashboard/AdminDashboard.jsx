@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router";
-import {LayoutDashboard,HeartHandshake,HeartCrack, ScrollText,User,} from "lucide-react";
+import { LayoutDashboard, HeartHandshake, HeartCrack, ScrollText, User, } from "lucide-react";
 
 const AdminDashboard = () => {
     //  demo data
@@ -24,7 +24,7 @@ const AdminDashboard = () => {
     return (
         <div className="flex min-h-screen bg-gray-100">
             {/* sidebar */}
-            <aside className="w-64 bg-gradient-to-r from-[#013223] to-[#006747] text-white min-h-[70vh] p-6 space-y-6">
+            <aside className="hidden md:block lg:block w-64 bg-gradient-to-r from-[#013223] to-[#006747] text-white min-h-[70vh] p-6 space-y-6">
                 <h2 className="text-2xl font-bold tracking-wide">MaritalDesk</h2>
                 <nav className="flex flex-col space-y-3">
                     <Link to="/kaziDashboard" className="hover:text-yellow-300 flex items-center gap-2">
@@ -55,25 +55,25 @@ const AdminDashboard = () => {
                     <h2 className="text-xl font-medium text-gray-700 mb-4">Marriage Form Submissions</h2>
 
                     <div className="overflow-x-auto bg-white rounded-lg shadow">
-                        <table className="w-full text-left border-collapse">
-                            <thead className=" bg-gradient-to-r from-[#013223] to-[#006747] text-white">
+                        <table className="min-w-full text-left border-collapse">
+                            <thead className="bg-gradient-to-r from-[#013223] to-[#006747] text-white text-sm sm:text-base">
                                 <tr>
-                                    <th className="p-3">#</th>
-                                    <th className="p-3">Groom</th>
-                                    <th className="p-3">Bride</th>
-                                    <th className="p-3">Kazi</th>
-                                    <th className="p-3">Status</th>
-                                    <th className="p-3 text-center">Actions</th>
+                                    <th className="p-2 sm:p-3">#</th>
+                                    <th className="p-2 sm:p-3">Groom</th>
+                                    <th className="p-2 sm:p-3">Bride</th>
+                                    <th className="p-2 sm:p-3 hidden md:table-cell">Kazi</th>
+                                    <th className="p-2 sm:p-3">Status</th>
+                                    <th className="p-2 sm:p-3 text-center">Actions</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody className="text-xs sm:text-sm">
                                 {forms.map((form) => (
                                     <tr key={form.id} className="border-b hover:bg-gray-100">
-                                        <td className="p-3">{form.id}</td>
-                                        <td className="p-3">{form.groomName}</td>
-                                        <td className="p-3">{form.brideName}</td>
-                                        <td className="p-3">{form.kaziName}</td>
-                                        <td className="p-3 font-semibold">
+                                        <td className="p-2 sm:p-3">{form.id}</td>
+                                        <td className="p-2 sm:p-3">{form.groomName}</td>
+                                        <td className="p-2 sm:p-3">{form.brideName}</td>
+                                        <td className="p-2 sm:p-3 hidden md:table-cell">{form.kaziName}</td>
+                                        <td className="p-2 sm:p-3 font-semibold">
                                             <span
                                                 className={`px-2 py-1 rounded text-xs ${form.status === "Verified"
                                                         ? "bg-green-100 text-green-700"
@@ -83,18 +83,18 @@ const AdminDashboard = () => {
                                                 {form.status}
                                             </span>
                                         </td>
-                                        <td className="p-3 text-center space-x-2">
+                                        <td className="p-2 sm:p-3 text-center space-y-1 sm:space-x-2 flex flex-col sm:flex-row justify-center items-center">
                                             {form.status === "Pending" ? (
                                                 <>
-                                                    <button className="px-3 py-1 bg-green-900 text-white rounded hover:bg-green-800">
+                                                    <button className="px-3 py-1 bg-green-900 text-white rounded hover:bg-green-800 w-full sm:w-auto">
                                                         Verify
                                                     </button>
-                                                    <button className="px-3 py-1 bg-red-600 text-white rounded hover:bg-red-700">
+                                                    <button className="px-3 py-1 bg-red-600 text-white rounded hover:bg-red-700 w-full sm:w-auto">
                                                         Reject
                                                     </button>
                                                 </>
                                             ) : (
-                                                <button className="px-3 py-1 bg-yellow-500 text-white rounded hover:bg-yellow-600">
+                                                <button className="px-3 py-1 bg-yellow-500 text-white rounded hover:bg-yellow-600 w-full sm:w-auto">
                                                     Generate Certificate
                                                 </button>
                                             )}
@@ -104,6 +104,7 @@ const AdminDashboard = () => {
                             </tbody>
                         </table>
                     </div>
+
                 </section>
             </main>
         </div>

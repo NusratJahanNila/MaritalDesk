@@ -3,6 +3,7 @@ import Banner from '../../Components/Header/Banner';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import HowItWorks from '../../Components/HowItWorks/HowItWorks';
+import FAQ from '../../Pages/FAQ/FAQ';
 
 const Home = () => {
 
@@ -20,6 +21,7 @@ const Home = () => {
             <Banner></Banner>
             {/* How it works */}
             <HowItWorks></HowItWorks>
+            <FAQ></FAQ>
         </div>
     );
 };

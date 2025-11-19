@@ -17,8 +17,9 @@ const KaziDashboard = () => {
     ];
 
     return (
-        <div className="flex bg-gray-50 min-h-screen">
-            <aside className="w-64 bg-gradient-to-r from-[#013223] to-[#006747] text-white min-h-screen p-6 space-y-6">
+        <div className="flex bg-gray-50 min-h-screen ">
+            {/* sidebar */}
+            <aside className="hidden md:block lg:block w-64 bg-gradient-to-r from-[#013223] to-[#006747] text-white min-h-screen p-6 space-y-6">
                 <h2 className="text-2xl font-bold tracking-wide">MaritalDesk</h2>
                 <nav className="flex flex-col space-y-3">
                     <Link to="/kaziDashboard" className="hover:text-yellow-300 flex items-center gap-2">
@@ -39,7 +40,7 @@ const KaziDashboard = () => {
                 </nav>
             </aside>
 
-            <main className="flex-1 p-10">
+            <main className="flex-1 p-2 md:p-10">
                 <header className="border-b border-gray-300 pb-4 mb-6 flex justify-between items-center">
                     <h1 className="text-3xl font-bold text-green-900">Kazi Dashboard</h1>
                 </header>
@@ -70,7 +71,7 @@ const KaziDashboard = () => {
                                                 to="#"
                                                 className="px-3 py-1 bg-yellow-500 text-white rounded hover:bg-yellow-600"
                                             >
-                                                View Details
+                                                <span className="hidden md:inline-block">View</span> Details
                                             </Link>
                                         </td>
                                     </tr>
@@ -82,7 +83,7 @@ const KaziDashboard = () => {
 
                 {/* verified req */}
                 <section className="mb-8 bg-white p-6 rounded-lg shadow-sm border border-gray-200">
-                    <h2 className="text-2xl font-semibold text-green-900 hover:text-green-800 mb-4">
+                    <h2 className=" text-2xl font-semibold text-green-900 hover:text-green-800 mb-4">
                         Verified Requests
                     </h2>
                     <div className="overflow-x-auto">
@@ -106,7 +107,7 @@ const KaziDashboard = () => {
                                                 to="#"
                                                 className="px-3 py-1 bg-green-700 text-white rounded hover:bg-green-800"
                                             >
-                                                View Certificate
+                                                <span className="hidden md:inline-block ">View</span> Certificate
                                             </Link>
                                         </td>
                                     </tr>
