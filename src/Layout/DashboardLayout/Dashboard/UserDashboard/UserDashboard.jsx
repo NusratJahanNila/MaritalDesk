@@ -30,7 +30,7 @@ const UserDashboard = () => {
                                 View and track your marriage or divorce application status.
                             </p>
                             <Link
-                                to='/marriage-application-form'
+                                to='/dashboard/marriage-application-form'
                                 className="mt-4 px-4 py-2 btn bg-gradient-to-r from-[#013223] to-[#006747] text-white">
                                 View Applications
                             </Link>

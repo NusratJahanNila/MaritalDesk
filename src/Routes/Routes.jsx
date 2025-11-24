@@ -12,6 +12,7 @@ import DashboardLayout from "../Layout/DashboardLayout/DashboardLayout";
 import KaziDashboard from "../Layout/DashboardLayout/Dashboard/KaziDashboard/KaziDashboard";
 import UserDashboard from "../Layout/DashboardLayout/Dashboard/UserDashboard/UserDashboard";
 import AdminDashboard from "../Layout/DashboardLayout/Dashboard/AdminDashboard/AdminDashboard";
+import MarriageApplicationForm from "../Layout/DashboardLayout/Dashboard/UserDashboard/MarriageApplicationForm/MarriageApplicationForm";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -67,10 +68,10 @@ const router = createBrowserRouter([
                 path: '/dashboard/userDashboard',
                 Component: UserDashboard
             },
-            // {
-            //     path: '/dashboard/marriage-application-form',
-            //     Component: 
-            // },
+            {
+                path: '/dashboard/marriage-application-form',
+                Component: MarriageApplicationForm
+            },
             {
                 path: '/dashboard/adminDashboard',
                 Component: AdminDashboard,
