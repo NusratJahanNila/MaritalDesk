@@ -1,34 +1,22 @@
-import { HeartCrack, HeartHandshake, LayoutDashboard, ScrollText, User } from "lucide-react";
 import React, { useEffect } from "react";
 import { FaWpforms } from "react-icons/fa";
-import { Link, NavLink } from "react-router";
+import { Link } from "react-router";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { ScrollText, User } from "lucide-react";
 
 const UserDashboard = () => {
     // animation
-        useEffect(() => {
-            AOS.init({
-                duration: 1000,
-                offset: 100,
-                once: true,
-            });
-        }, []);
+    useEffect(() => {
+        AOS.init({
+            duration: 1000,
+            offset: 100,
+            once: true,
+        });
+    }, []);
     return (
-        <div className="bg-gray-100">
-            <div className="flex min-h-[60vh]">
-                {/* sidebar */}
-                <aside className="hidden md:block lg:block w-64 bg-gradient-to-r from-[#013223] to-[#006747] text-white min-h-[70vh] p-6 space-y-6">
-                    <h2 className="text-2xl font-bold tracking-wide">MaritalDesk</h2>
-                    <nav className="flex flex-col space-y-3">
-                        <NavLink to="/dashboard" className="hover:text-yellow-300 flex gap-2 items-center"><LayoutDashboard />Dashboard</NavLink>
-                        <NavLink to="/marriage" className="hover:text-yellow-300 flex gap-2 items-center"><HeartHandshake />Marriage</NavLink>
-                        <NavLink to="/divorce" className="hover:text-yellow-300 flex gap-2 items-center"><HeartCrack />Divorce</NavLink>
-                        <NavLink to="/certificate" className="hover:text-yellow-300 flex gap-2 items-center"><ScrollText />Certificate</NavLink>
-                        <NavLink to="/profile" className="hover:text-yellow-300 flex gap-2 items-center"><User />Profile</NavLink>
-                    </nav>
-                </aside>
-
+        <div className="max-w-6xl mx-auto py-5">
+            <div className="bg-white rounded-2xl p-4">
                 {/* dashboard */}
                 <main className="flex-1 p-4 md:p-10">
                     <header className="border-b border-gray-300 pb-4 mb-6">
@@ -41,9 +29,11 @@ const UserDashboard = () => {
                             <p className="text-sm text-gray-600">
                                 View and track your marriage or divorce application status.
                             </p>
-                            <button className="mt-4 px-4 py-2 btn bg-gradient-to-r from-[#013223] to-[#006747] text-white">
+                            <Link
+                                to='/marriage-application-form'
+                                className="mt-4 px-4 py-2 btn bg-gradient-to-r from-[#013223] to-[#006747] text-white">
                                 View Applications
-                            </button>
+                            </Link>
                         </div>
 
                         <div className="bg-white p-6 rounded-lg shadow" data-aos="fade-left" data-aos-delay="100">
@@ -67,6 +57,7 @@ const UserDashboard = () => {
                         </div>
                     </section>
                 </main>
+
             </div>
         </div>
     );

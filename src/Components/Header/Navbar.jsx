@@ -39,15 +39,15 @@ const Navbar = () => {
         </NavLink></li>
 
         <li className='text-lg text-green-800 font-bold'><NavLink
-            to='/userDashboard'
+            to='/dashboard/userDashboard'
             className={({ isActive }) => isActive && 'btn bg-gradient-to-r from-[#013223] to-[#006747] text-white'}> Dashboard</NavLink></li>
 
         <li className='text-lg text-green-800 font-bold'><NavLink
-            to='/kaziDashboard'
+            to='/dashboard/kaziDashboard'
             className={({ isActive }) => isActive && 'btn bg-gradient-to-r from-[#013223] to-[#006747] text-white'}>Kazi </NavLink></li>
 
         <li className='text-lg text-green-800 font-bold'><NavLink
-            to='/adminDashboard'
+            to='/dashboard/adminDashboard'
             className={({ isActive }) => isActive && 'btn bg-gradient-to-r from-[#013223] to-[#006747] text-white'}> Admin</NavLink></li>     
 
         <li className='text-lg text-green-800 font-bold'><NavLink
