@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
+import { imageUpload } from "../../../../../Components/Shared/utils";
 
 const MarriageApplicationForm = () => {
     const { register, handleSubmit, watch } = useForm();
@@ -7,8 +8,32 @@ const MarriageApplicationForm = () => {
     const dowerPaidByProperty = watch("dowerPaidByProperty") === "Yes";
     const permissionFromCouncil = watch("permissionFromCouncil") === "Yes";
 
-    const onSubmit = (data) => {
-        console.log(data);
+    const onSubmit = async(data) => {
+        const { husbandPhoto,wifePhoto ,wakilSignature,witness2Signature,witness1Signature } = data;
+        
+            // image file
+            const husbandImage = husbandPhoto[0];
+            const wifeImage = wifePhoto[0];
+            const wakilSignatureImg = wakilSignature[0];
+            const witness1SignatureImg = witness1Signature[0];
+            const witness2SignatureImg = witness2Signature[0];
+
+
+        
+            try {
+              // generate img url from file
+              const husbandPhoto = await imageUpload(husbandImage);
+              const wifePhoto = await imageUpload(wifeImage);
+              const wakilSignature = await imageUpload(wakilSignatureImg);
+              const witness1Signature = await imageUpload(witness1SignatureImg);
+              const witness2Signature = await imageUpload(witness2SignatureImg);
+        
+              console.table(husbandPhoto,wifePhoto,wakilSignature,witness1Signature,witness2Signature)
+              
+            }
+            catch (err) {
+              console.log(err)
+            }
         toast.success("Marriage Form Submitted Successfully!");
     };
 

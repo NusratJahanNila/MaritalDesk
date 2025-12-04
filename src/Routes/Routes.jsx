@@ -13,6 +13,7 @@ import KaziDashboard from "../Layout/DashboardLayout/Dashboard/KaziDashboard/Kaz
 import UserDashboard from "../Layout/DashboardLayout/Dashboard/UserDashboard/UserDashboard";
 import AdminDashboard from "../Layout/DashboardLayout/Dashboard/AdminDashboard/AdminDashboard";
 import MarriageApplicationForm from "../Layout/DashboardLayout/Dashboard/UserDashboard/MarriageApplicationForm/MarriageApplicationForm";
+import BecomeKaziForm from "../Pages/BecomeKazi/BecomeKaziForm";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
             {
                 path: '/profile',
                 Component: Profile
+            },
+            {
+                path: '/become-kazi',
+                Component: BecomeKaziForm,
             },
 
         ]
