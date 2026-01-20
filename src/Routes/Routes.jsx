@@ -15,6 +15,7 @@ import AdminDashboard from "../Layout/DashboardLayout/Dashboard/AdminDashboard/A
 import MarriageApplicationForm from "../Layout/DashboardLayout/Dashboard/UserDashboard/MarriageApplicationForm/MarriageApplicationForm";
 import BecomeKaziForm from "../Pages/BecomeKazi/BecomeKaziForm";
 import DashboardHome from "../Layout/DashboardLayout/Dashboard/DashboardHome";
+import ContactUs from "../Pages/ContactUS/ContactUs";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
             {
                 path: '/about',
                 Component: AboutUs
+            },
+            {
+                path: '/contact',
+                Component: ContactUs
             },
             {
                 path: '/services',

@@ -60,7 +60,7 @@ const Navbar = () => {
             </NavLink>
         </li>
 
-        <li className='text-lg font-bold'>
+        {/* <li className='text-lg font-bold'>
             <NavLink
                 to='/services'
                 className={({ isActive }) => 
@@ -70,7 +70,7 @@ const Navbar = () => {
                 }>
                 Services
             </NavLink>
-        </li>
+        </li> */}
 
         {/* Conditional Dashboard links based on user role */}
         {user && (
@@ -130,20 +130,19 @@ const Navbar = () => {
                 About Us
             </NavLink>
         </li>
+        <li className='text-lg font-bold'>
+            <NavLink
+                to='/contact'
+                className={({ isActive }) => 
+                    isActive 
+                        ? 'btn bg-gradient-to-r from-[#013223] to-[#006747] text-white' 
+                        : 'text-green-800 dark:text-green-200'
+                }>
+                Contact
+            </NavLink>
+        </li>
 
-        {user && (
-            <li className='text-lg font-bold'>
-                <NavLink
-                    to='/profile'
-                    className={({ isActive }) => 
-                        isActive 
-                            ? 'btn bg-gradient-to-r from-[#013223] to-[#006747] text-white' 
-                            : 'text-green-800 dark:text-green-200'
-                    }>
-                    Profile
-                </NavLink>
-            </li>
-        )}
+        
     </>
 
     return (
@@ -200,7 +199,7 @@ const Navbar = () => {
                                 {/* Profile Dropdown Trigger */}
                                 <button
                                     onClick={() => setIsProfileOpen(!isProfileOpen)}
-                                    className="flex items-center gap-2 p-1.5 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200"
+                                    className="flex items-center gap-2 p-1.5 rounded-full bg-gray-100 hover:bg-gray-200 dark:hover:bg-gray-800 transition-all duration-200"
                                 >
                                     <img
                                         src={user.photoURL || '/default-avatar.png'}
