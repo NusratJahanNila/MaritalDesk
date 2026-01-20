@@ -4,7 +4,7 @@ import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import AuthLayout from "../Layout/AuthLayout";
-import About from "../Pages/About/About";
+import AboutUs from "../Pages/About/About";
 import Services from "../Pages/Services/Services";
 import Profile from "../Pages/Profile/Profile";
 import UpdateProfile from "../Pages/Profile/UpdateProfile";
@@ -14,6 +14,7 @@ import UserDashboard from "../Layout/DashboardLayout/Dashboard/UserDashboard/Use
 import AdminDashboard from "../Layout/DashboardLayout/Dashboard/AdminDashboard/AdminDashboard";
 import MarriageApplicationForm from "../Layout/DashboardLayout/Dashboard/UserDashboard/MarriageApplicationForm/MarriageApplicationForm";
 import BecomeKaziForm from "../Pages/BecomeKazi/BecomeKaziForm";
+import DashboardHome from "../Layout/DashboardLayout/Dashboard/DashboardHome";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -25,7 +26,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/about',
-                Component: About
+                Component: AboutUs
             },
             {
                 path: '/services',
@@ -65,6 +66,10 @@ const router = createBrowserRouter([
         path: '/dashboard',
         element: <DashboardLayout></DashboardLayout>,
         children: [
+            {
+                path: '/dashboard',
+                Component: DashboardHome
+            },
             {
                 path: '/dashboard/kaziDashboard',
                 Component: KaziDashboard

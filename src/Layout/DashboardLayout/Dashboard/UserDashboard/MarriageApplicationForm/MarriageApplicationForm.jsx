@@ -128,7 +128,7 @@ const MarriageApplicationForm = () => {
                     4. WAKIL/REPRESENTATIVE'S DETAILS
                 ------------------------------------*/}
                     <section>
-                        <h2 className="text-xl font-semibold mb-4">7. Representative/Wakil's Details</h2>
+                        <h2 className="text-xl font-semibold mb-4">4. Representative/Wakil's Details</h2>
                          <div className="space-y-3 p-4 rounded-lg ">
                                 <input
                                     {...register("wakilName")}
@@ -169,7 +169,7 @@ const MarriageApplicationForm = () => {
 
                     {/* ----------------- WITNESSES SECTION ------------------ */}
                     <section>
-                        <h2 className="text-xl font-semibold mb-4">4. Witness Information</h2>
+                        <h2 className="text-xl font-semibold mb-4">5. Witness Information</h2>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
 
@@ -260,7 +260,7 @@ const MarriageApplicationForm = () => {
                     5.DOWER / MAHR SECTION
                 ------------------------------------*/}
                     <section>
-                        <h2 className="text-xl font-semibold mb-4">5.Dower / Mahr Information</h2>
+                        <h2 className="text-xl font-semibold mb-4">6.Dower / Mahr Information</h2>
 
                         <input {...register("dowerAmount")} placeholder="Dower/Mahr Amount" className="input input-bordered w-full" />
 
@@ -295,7 +295,7 @@ const MarriageApplicationForm = () => {
                     6.COUNCIL PERMISSION
                 ------------------------------------*/}
                     <section>
-                        <h2 className="text-xl font-semibold mb-4">6.Council Permission</h2>
+                        <h2 className="text-xl font-semibold mb-4">7.Council Permission</h2>
 
                         <h3 className="font-medium mt-2">i. Permission from Council to marry again?</h3>
                         <div className="flex gap-5 mt-2">
@@ -316,7 +316,7 @@ const MarriageApplicationForm = () => {
                    7. DATE + FEE
                 ------------------------------------*/}
                     <section>
-                        <h2 className="text-xl font-semibold mb-4">7.Marriage Registration Info</h2>
+                        <h2 className="text-xl font-semibold mb-4">8.Marriage Registration Info</h2>
 
                         <input type="date" {...register("marriageRegistrationDate")} className="input input-bordered w-full" />
                         <input {...register("registryFee")} type="number" placeholder="Registry Fee (Paid)" className="input input-bordered w-full mt-3" />

@@ -48,43 +48,80 @@ const FAQ = () => {
     };
 
     return (
-        <div className="p-15 bg-gradient-to-r from-[#013223] via-[#006747] to-[#014B34] max-w-6xl mx-auto rounded-2xl my-5">
-            <div className="text-center max-w-4xl mx-auto space-y-3 ">
-                <h2 className="text-white text-2xl font-bold">Frequently Asked Question (FAQ)</h2>
-                <p className="text-gray-200 mb-3">Frequently asked questions about our centralized digital marital services,helping citizens understand the full process from submission to certification</p>
-            </div>
-            <div className="w-full max-w-3xl mx-auto space-y-3">
-                {faqs.map((faq, index) => (
-                    <div
-                        key={index}
-                        className={`border rounded-xl transition-all duration-200 ${openIndex === index
-                            ? "bg-yellow-50 border-yellow-300"
-                            : "bg-white border-gray-200"
-                            }`}
-                    >
-                        {/* Question */}
-                        <button
-                            onClick={() => toggleFAQ(index)}
-                            className="w-full flex justify-between items-center p-5 text-left font-medium text-yellow-500"
-                        >
-                            {faq.question}
-                            <FiChevronDown
-                                className={`transition-transform duration-300 ${openIndex === index ? "rotate-180" : ""
-                                    }`}
-                            />
-                        </button>
-
-                        {/* Answer */}
-                        {openIndex === index && (
-                            <div className="px-5 pb-5 text-gray-600 leading-relaxed">
-                                {faq.answer}
-                            </div>
-                        )}
-                    </div>
-                ))}
-            </div>
+    <div className="p-8 md:p-12 lg:p-15 
+                    bg-gradient-to-r from-[#013223] via-[#006747] to-[#014B34] 
+                    dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 
+                    max-w-6xl mx-auto rounded-2xl my-8 md:my-12">
+        <div className="text-center max-w-4xl mx-auto space-y-4 mb-8">
+            <h2 className="text-white text-2xl md:text-3xl font-bold transition-all duration-300 hover:scale-105">
+                Frequently Asked Questions (FAQ)
+            </h2>
+            <p className="text-gray-200 dark:text-gray-300 mb-3 text-lg">
+                Frequently asked questions about our centralized digital marital services, 
+                helping citizens understand the full process from submission to certification
+            </p>
         </div>
-    );
+        
+        <div className="w-full max-w-3xl mx-auto space-y-4">
+            {faqs.map((faq, index) => (
+                <div
+                    key={index}
+                    className={`border rounded-xl transition-all duration-300 
+                               ${openIndex === index
+                                    ? "bg-yellow-50 dark:bg-yellow-900/20 border-yellow-300 dark:border-yellow-700 shadow-lg transform scale-[1.02]"
+                                    : "bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:shadow-md hover:-translate-y-1"
+                                }`}
+                >
+                    {/* Question */}
+                    <button
+                        onClick={() => toggleFAQ(index)}
+                        className="w-full flex justify-between items-center p-5 text-left 
+                                   font-medium text-green-900 dark:text-green-300 
+                                   transition-all duration-300 
+                                   hover:bg-green-50 dark:hover:bg-gray-700/50 rounded-t-xl"
+                    >
+                        <span className="text-lg font-semibold">
+                            {faq.question}
+                        </span>
+                        <FiChevronDown
+                            className={`transition-all duration-500 
+                                        ${openIndex === index 
+                                            ? "transform rotate-180 text-green-700 dark:text-green-400" 
+                                            : "text-gray-500 dark:text-gray-400"
+                                        }`}
+                        />
+                    </button>
+
+                    {/* Answer */}
+                    {openIndex === index && (
+                        <div className="px-5 pb-5 text-gray-600 dark:text-gray-400 leading-relaxed 
+                                        animate-fadeIn"
+                             style={{animation: 'fadeIn 0.3s ease-in-out'}}>
+                            {faq.answer}
+                        </div>
+                    )}
+                </div>
+            ))}
+        </div>
+        
+        {/* Add CSS for fadeIn animation */}
+        <style jsx>{`
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(-10px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            .animate-fadeIn {
+                animation: fadeIn 0.3s ease-in-out;
+            }
+        `}</style>
+    </div>
+);
 };
 
 export default FAQ;

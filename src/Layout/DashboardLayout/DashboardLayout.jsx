@@ -4,6 +4,7 @@ import { AuthContext } from '../../Provider/AuthContext';
 import { toast } from 'react-toastify';
 import { Link, NavLink, Outlet } from 'react-router';
 import { HeartHandshake, HeartCrack, ScrollText, User, } from "lucide-react";
+import { GrDashboard } from 'react-icons/gr';
 
 const DashboardLayout = () => {
     const { user, logout } = use(AuthContext);
@@ -18,35 +19,7 @@ const DashboardLayout = () => {
                 console.log(error)
             });
     }
-    const links = <>
-        <li className='text-lg text-green-800 font-bold'><NavLink
-            to='/'
-            className={({ isActive }) => isActive && 'btn bg-gradient-to-r from-[#013223] to-[#006747] text-white'}>Home</NavLink></li>
 
-        <li className='text-lg text-green-800 font-bold'><NavLink
-            to='/services'
-            className={({ isActive }) => isActive && 'btn bg-gradient-to-r from-[#013223] to-[#006747] text-white'}>
-            <div className="dropdown">
-                <div tabIndex={0} role="button" className=" mx-1">Services</div>
-            </div>
-        </NavLink></li>
-        <li className='text-lg text-green-800 font-bold'><NavLink
-            to='/dashboard/userDashboard'
-            className={({ isActive }) => isActive && 'btn bg-gradient-to-r from-[#013223] to-[#006747] text-white'}> Dashboard</NavLink></li>
-
-        <li className='text-lg text-green-800 font-bold'><NavLink
-            to='/dashboard/kaziDashboard'
-            className={({ isActive }) => isActive && 'btn bg-gradient-to-r from-[#013223] to-[#006747] text-white'}>Kazi </NavLink></li>
-
-        <li className='text-lg text-green-800 font-bold'><NavLink
-            to='/dashboard/adminDashboard'
-            className={({ isActive }) => isActive && 'btn bg-gradient-to-r from-[#013223] to-[#006747] text-white'}> Admin</NavLink></li>
-
-        <li className='text-lg text-green-800 font-bold'><NavLink
-            to='/about'
-            className={({ isActive }) => isActive && 'btn bg-gradient-to-r from-[#013223] to-[#006747] text-white'}>About Us</NavLink></li>
-
-    </>
     return (
         <div className="drawer lg:drawer-open max-w-7xl mx-auto">
             <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
@@ -67,12 +40,6 @@ const DashboardLayout = () => {
                             <span className='text-4xl font-light text-orange-600'>|</span>
                             <span className='font-bold sm:text-2xl text-green-800'>MaritalDesk</span>
                         </Link>
-                    </div>
-                    <div className="navbar-center hidden lg:flex">
-                        <ul
-                            className="menu menu-horizontal px-1">
-                            {links}
-                        </ul>
                     </div>
                     <div className='navbar-end '>
                         <div >
@@ -111,55 +78,56 @@ const DashboardLayout = () => {
 
                         {/* Our list items */}
                         {/* my content */}
-                        <li className='hover:text-yellow-400'>
-                            <div className="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Marriage Requests">
-                                <div >
-                                    <HeartHandshake size={18} />
+                        <NavLink to='/dashboard'>
+                            <li className='hover:text-yellow-400'>
+                                <div className="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Dashboard">
+                                    <div >
+                                        <GrDashboard size={18} />
+                                    </div>
+                                    <span className="is-drawer-close:hidden">
+                                        Dashboard
+                                    </span>
                                 </div>
-                                <span className="is-drawer-close:hidden">
-                                    <NavLink to='/dashboard/marriage-application-form'>Marriage Requests</NavLink>
-                                </span>
-                            </div>
-                        </li>
-                        <li className='hover:text-yellow-400'>
-                            <div className="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Divorce Requests">
-                                <div >
-                                    <HeartCrack className="my-1.5 inline-block size-4" />
-                                </div>
-                                <span className="is-drawer-close:hidden">
-                                    <NavLink to='/dashboard/marriage-application-form'>Divorce Requests</NavLink>
-                                </span>
-                            </div>
-                        </li>
-                        <li className='hover:text-yellow-400'>
-                            <div className="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Certificates">
-                                <div >
-                                    <ScrollText className="my-1.5 inline-block size-4" />
-                                </div>
-                                <span className="is-drawer-close:hidden">
-                                    <NavLink to='/dashboard/marriage-application-form'>Certificates</NavLink>
-                                </span>
-                            </div>
-                        </li>
-                        <li className='hover:text-yellow-400'>
-                            <div className="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Profile">
-                                <div >
-                                    <User className="my-1.5 inline-block size-4" />
-                                </div>
-                                <span className="is-drawer-close:hidden">
-                                    <NavLink to='/dashboard/marriage-application-form'>Profile</NavLink>
-                                </span>
-                            </div>
-                        </li>
+                            </li>
+                        </NavLink>
 
-                        {/* List item */}
-                        <li className='hover:text-yellow-400'>
-                            <button className="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Settings">
-                                {/* Settings icon */}
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" strokeLinejoin="round" strokeLinecap="round" strokeWidth="2" fill="none" stroke="currentColor" className="my-1.5 inline-block size-4"><path d="M20 7h-9"></path><path d="M14 17H5"></path><circle cx="17" cy="17" r="3"></circle><circle cx="7" cy="7" r="3"></circle></svg>
-                                <span className="is-drawer-close:hidden"> Settings</span>
-                            </button>
-                        </li>
+                        <NavLink to='/dashboard/marriage-application-form'>
+                            <li className='hover:text-yellow-400'>
+                                <div className="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Marriage Requests">
+                                    <div >
+                                        <HeartHandshake size={18} />
+                                    </div>
+                                    <span className="is-drawer-close:hidden">
+                                        Marriage Requests
+                                    </span>
+                                </div>
+                            </li>
+                        </NavLink>
+
+                        <NavLink to='/dashboard/marriage-application-form'>
+                            <li className='hover:text-yellow-400'>
+                                <div className="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Certificates">
+                                    <div >
+                                        <ScrollText className="my-1.5 inline-block size-4" />
+                                    </div>
+                                    <span className="is-drawer-close:hidden">
+                                        Certificates
+                                    </span>
+                                </div>
+                            </li>
+                        </NavLink>
+                        <NavLink to='/dashboard/marriage-application-form'>
+                            <li className='hover:text-yellow-400'>
+                                <div className="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Profile">
+                                    <div >
+                                        <User className="my-1.5 inline-block size-4" />
+                                    </div>
+                                    <span className="is-drawer-close:hidden">
+                                        Profile
+                                    </span>
+                                </div>
+                            </li>
+                        </NavLink>
                     </ul>
                 </div>
             </div>
