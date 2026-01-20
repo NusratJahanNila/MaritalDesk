@@ -16,6 +16,8 @@ import MarriageApplicationForm from "../Layout/DashboardLayout/Dashboard/UserDas
 import BecomeKaziForm from "../Pages/BecomeKazi/BecomeKaziForm";
 import DashboardHome from "../Layout/DashboardLayout/Dashboard/DashboardHome";
 import ContactUs from "../Pages/ContactUS/ContactUs";
+import MarraigeRequests from "../Layout/DashboardLayout/Dashboard/KaziDashboard/MarraigeRequests/MarraigeRequests";
+import MarriageVerification from "../Layout/DashboardLayout/Dashboard/AdminDashboard/MarriageVerification/MarriageVerification";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -76,6 +78,10 @@ const router = createBrowserRouter([
                 Component: KaziDashboard
             },
             {
+                path: '/dashboard/marriage-request',
+                Component: MarraigeRequests
+            },
+            {
                 path: '/dashboard/userDashboard',
                 Component: UserDashboard
             },
@@ -86,6 +92,10 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/adminDashboard',
                 Component: AdminDashboard,
+            },
+            {
+                path: '/dashboard/marriage-verification',
+                Component: MarriageVerification,
             },
             
             {

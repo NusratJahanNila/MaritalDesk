@@ -21,21 +21,15 @@ const Services = () => {
         },
         {
             id: 2,
-            icon: <HeartCrack className="w-10 h-10 text-green-700" />,
-            title: "Divorce",
-            desc: "Apply for divorce online through an authorized Kazi, ensuring confidentiality and legal accuracy at every step.",
+            icon: <TrendingUp className="w-10 h-10 text-green-700" />,
+            title: "Check Application Status",
+            desc: "Track your marriage or divorce application anytime to see updates from Kazi and Admin in real time.",
         },
         {
             id: 3,
             icon: <ScrollText className="w-10 h-10 text-green-700" />,
             title: "Download Certificate",
             desc: "Easily download your verified marriage or divorce certificate with a secure QR code for authenticity.",
-        },
-        {
-            id: 4,
-            icon: <TrendingUp className="w-10 h-10 text-green-700" />,
-            title: "Check Application Status",
-            desc: "Track your marriage or divorce application anytime to see updates from Kazi and Admin in real time.",
         }
     ];
     return (
@@ -57,7 +51,7 @@ const Services = () => {
             </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto" data-aos="fade-up">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto" data-aos="fade-up">
             {steps.map((step) => (
                 <div
                     key={step.id}

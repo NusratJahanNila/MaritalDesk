@@ -3,39 +3,42 @@ import logoImg from '../../assets/Maritaldesk.jpeg'
 import { AuthContext } from '../../Provider/AuthContext';
 import { toast } from 'react-toastify';
 import { Link, NavLink, Outlet } from 'react-router';
-import { HeartHandshake,  Sun, Moon, ScrollText, User,LayoutDashboard  } from "lucide-react";
-import { GrDashboard } from 'react-icons/gr';
+import { Sun, Moon, ScrollText, User, LayoutDashboard } from "lucide-react";
+import { FaWpforms } from "react-icons/fa";
+import { FaListCheck } from "react-icons/fa6";
+import { GrDocumentVerified } from "react-icons/gr";
+
 
 const DashboardLayout = () => {
     const { user, logout } = use(AuthContext);
     const [isProfileOpen, setIsProfileOpen] = useState(false);
-    
-        // Theme state
-        const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
-        
-        // Apply theme on mount and when theme changes
-        useEffect(() => {
-            const html = document.querySelector("html");
-            html.setAttribute("data-theme", theme);
-            localStorage.setItem("theme", theme);
-        }, [theme]);
-    
-        // Handle theme toggle
-        const handleThemeToggle = () => {
-            setTheme(prev => prev === "light" ? "dark" : "light");
+
+    // Theme state
+    const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+
+    // Apply theme on mount and when theme changes
+    useEffect(() => {
+        const html = document.querySelector("html");
+        html.setAttribute("data-theme", theme);
+        localStorage.setItem("theme", theme);
+    }, [theme]);
+
+    // Handle theme toggle
+    const handleThemeToggle = () => {
+        setTheme(prev => prev === "light" ? "dark" : "light");
+    };
+
+    // Close dropdown when clicking outside
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (isProfileOpen && !event.target.closest('.profile-dropdown-container')) {
+                setIsProfileOpen(false);
+            }
         };
-    
-        // Close dropdown when clicking outside
-        useEffect(() => {
-            const handleClickOutside = (event) => {
-                if (isProfileOpen && !event.target.closest('.profile-dropdown-container')) {
-                    setIsProfileOpen(false);
-                }
-            };
-            document.addEventListener('click', handleClickOutside);
-            return () => document.removeEventListener('click', handleClickOutside);
-        }, [isProfileOpen]);
-    
+        document.addEventListener('click', handleClickOutside);
+        return () => document.removeEventListener('click', handleClickOutside);
+    }, [isProfileOpen]);
+
 
     // Logout
     const handleLogout = (e) => {
@@ -53,9 +56,13 @@ const DashboardLayout = () => {
             <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content">
                 {/* Navbar */}
-                <div className='bg-base-100 dark:bg-gray-900 shadow-lg dark:shadow-gray-800/30 border-b-2 border-gray-200 dark:border-gray-500 top-0 left-0 fixed right-0 z-1'>
+                <div className='bg-base-100 dark:bg-gray-900 shadow-lg dark:shadow-gray-800/30 border-b-2 border-gray-200 dark:border-gray-500 '>
                     <div className="navbar max-w-6xl mx-auto ">
                         <div className="navbar-start">
+                            <label htmlFor="my-drawer-4" aria-label="open sidebar" className="btn btn-square btn-ghost">
+                                {/* Sidebar toggle icon */}
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" strokeLinejoin="round" strokeLinecap="round" strokeWidth="2" fill="none" stroke="currentColor" className="my-1.5 inline-block size-4"><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path><path d="M9 4v16"></path><path d="M14 10l2 2l-2 2"></path></svg>
+                            </label>
                             <Link to='/' className="text-xl flex items-center justify-center gap-1">
                                 <img
                                     src={logoImg}
@@ -183,7 +190,7 @@ const DashboardLayout = () => {
                     </div>
                 </div>
                 {/* Page content here */}
-                <div className="bg-base-300 min-h-screen pt-20">
+                <div className="bg-base-300 min-h-screen">
                     <Outlet></Outlet>
                 </div>
             </div>
@@ -192,7 +199,7 @@ const DashboardLayout = () => {
                 <label htmlFor="my-drawer-4" aria-label="close sidebar" className="drawer-overlay"></label>
                 <div className="flex min-h-full flex-col items-start bg-green-900 text-white  shadow-sm is-drawer-close:w-14 is-drawer-open:w-64">
                     {/* Sidebar content here */}
-                    <ul className="menu w-full grow">
+                    <ul className="menu w-full grow space-y-3">
                         {/* List item */}
                         <li className='hover:text-yellow-400'>
                             <Link to='/' className="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Homepage">
@@ -221,10 +228,34 @@ const DashboardLayout = () => {
                             <li className='hover:text-yellow-400'>
                                 <div className="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Marriage Application">
                                     <div >
-                                        <HeartHandshake size={18} />
+                                        <FaWpforms size={18} />
                                     </div>
                                     <span className="is-drawer-close:hidden">
                                         Marriage Application
+                                    </span>
+                                </div>
+                            </li>
+                        </NavLink>
+                        <NavLink to='/dashboard/marriage-request'>
+                            <li className='hover:text-yellow-400'>
+                                <div className="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Marriage Requests">
+                                    <div >
+                                        <FaListCheck size={18} />
+                                    </div>
+                                    <span className="is-drawer-close:hidden">
+                                        Marriage Requests
+                                    </span>
+                                </div>
+                            </li>
+                        </NavLink>
+                        <NavLink to='/dashboard/marriage-verification'>
+                            <li className='hover:text-yellow-400'>
+                                <div className="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Marriage Verification">
+                                    <div >
+                                        <GrDocumentVerified size={18} />
+                                    </div>
+                                    <span className="is-drawer-close:hidden">
+                                        Marriage Verification
                                     </span>
                                 </div>
                             </li>

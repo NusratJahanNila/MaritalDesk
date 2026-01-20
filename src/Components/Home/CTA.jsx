@@ -8,7 +8,7 @@ const CallToActionSection = () => {
             icon: <FaUserPlus className="w-6 h-6" />,
             title: "Create Account",
             description: "Sign up and start your marital journey",
-            link: "/register",
+            link: "/auth/register",
             color: "from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600",
             iconBg: "bg-blue-100 dark:bg-blue-900/30"
         },
@@ -16,7 +16,7 @@ const CallToActionSection = () => {
             icon: <FaFileContract className="w-6 h-6" />,
             title: "Apply for Marriage",
             description: "Submit your marriage application online",
-            link: "/apply",
+            link: "/dashboard/marriage-application-form",
             color: "from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600",
             iconBg: "bg-green-100 dark:bg-green-900/30"
         },
@@ -90,14 +90,14 @@ const CallToActionSection = () => {
                     {/* Main CTA Button */}
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <Link
-                            to="/register"
+                            to="/auth/register"
                             className="inline-flex items-center justify-center px-8 py-4 bg-white text-green-800 dark:bg-gray-800 dark:text-green-300 rounded-xl font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 shadow-lg"
                         >
                             Start Your Journey Now
                             <FaArrowRight className="ml-3 w-5 h-5" />
                         </Link>
                         <Link
-                            to="/demo"
+                            to=""
                             className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-white dark:border-green-300 text-white dark:text-green-300 rounded-xl font-bold text-lg hover:bg-white/10 transition-all duration-300"
                         >
                             Watch Platform Demo

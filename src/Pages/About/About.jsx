@@ -156,11 +156,11 @@ const AboutUs = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {[
-                            { name: "Nusrat Jahan", role: "Frontend Designer", icon: "🎨", color: "from-pink-100 to-rose-100 dark:from-pink-900/30 dark:to-rose-900/30" },
+                            { name: "Nusrat Jahan", role: "Frontend Developer", icon: "🎨", color: "from-pink-100 to-rose-100 dark:from-pink-900/30 dark:to-rose-900/30" },
                             { name: "Tasfia Sultana", role: "Backend Developer", icon: "⚙️", color: "from-blue-100 to-cyan-100 dark:from-blue-900/30 dark:to-cyan-900/30" },
                             { name: "Mahfuzur Rahman", role: "UX Designer", icon: "✨", color: "from-purple-100 to-violet-100 dark:from-purple-900/30 dark:to-violet-900/30" },
                             { name: "Arzun Majumder", role: "Model/Logic Architect", icon: "🧠", color: "from-amber-100 to-orange-100 dark:from-amber-900/30 dark:to-orange-900/30" },
-                            { name: "Abu Naser", role: "Project Lead", icon: "👨‍💼", color: "from-green-100 to-teal-100 dark:from-green-900/30 dark:to-teal-900/30" }
+                            { name: "Abu Naser", role: "Data Collector", icon: "👨‍💼", color: "from-green-100 to-teal-100 dark:from-green-900/30 dark:to-teal-900/30" }
                         ].map((member, index) => (
                             <div 
                                 key={index} 

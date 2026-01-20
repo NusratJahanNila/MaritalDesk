@@ -67,9 +67,9 @@ const BecomeKaziForm = () => {
   };
 
   return (
-    <div className="bg-gray-100 p-10">
-      <div className="max-w-4xl mx-auto bg-white p-6 rounded-lg border border-gray-200 ">
-        <h1 className="text-3xl font-bold text-center text-green-900 mb-6">
+    <div className="bg-gray-100 dark:bg-gray-900 py-20">
+      <div className="max-w-6xl mx-auto bg-white dark:bg-gray-800 p-6 mt-4 rounded-lg border border-gray-200 dark:border-gray-700 ">
+        <h1 className="text-3xl font-bold text-center text-green-900 dark:text-green-300 mb-6">
           Become a Kazi - Application Form
         </h1>
 
@@ -81,141 +81,141 @@ const BecomeKaziForm = () => {
               <div className="space-y-3">
                 {/* Personal Info */}
                 <section>
-                  <h3 className="text-lg font-semibold mb-3">Personal Information</h3>
+                  <h3 className="text-lg font-semibold mb-3 dark:text-gray-300">Personal Information</h3>
                   <div className="grid grid-cols-2 gap-4">
-                    <label className="grid gap-1 text-gray-500">
+                    <label className="grid gap-1 text-gray-500 dark:text-gray-400">
                       Full Name
                       <input {...register("name", { required: true })} 
                       placeholder="Full Name" 
-                      className="input input-bordered w-full" />
-                      {errors.fullName && <span className="text-red-500 text-sm">Required</span>}
+                      className="input input-bordered w-full dark:bg-gray-700 dark:text-white dark:border-gray-600" />
+                      {errors.fullName && <span className="text-red-500 dark:text-red-400 text-sm">Required</span>}
                     </label>
 
 
-                    <label className="grid gap-1 text-gray-500">
+                    <label className="grid gap-1 text-gray-500 dark:text-gray-400">
                       Father's Name
                       <input
                         {...register("fatherName", { required: true })}
-                        className="input input-bordered w-full"
+                        className="input input-bordered w-full dark:bg-gray-700 dark:text-white dark:border-gray-600"
                         placeholder="Enter fathers name"
                       />
-                      {errors.fatherName && <span className="text-red-500 text-sm">Required</span>}
+                      {errors.fatherName && <span className="text-red-500 dark:text-red-400 text-sm">Required</span>}
                     </label>
 
 
-                    <label className="grid gap-1 text-gray-500">
+                    <label className="grid gap-1 text-gray-500 dark:text-gray-400">
                       Date of Birth
                       <input
                         type="date"
                         {...register("dob", { required: true })}
-                        className="input input-bordered w-full"
+                        className="input input-bordered w-full dark:bg-gray-700 dark:text-white dark:border-gray-600"
                       />
-                      {errors.dob && <span className="text-red-500 text-sm">Required</span>}
+                      {errors.dob && <span className="text-red-500 dark:text-red-400 text-sm">Required</span>}
                     </label>
 
 
-                    <label className="grid gap-1 text-gray-500">
+                    <label className="grid gap-1 text-gray-500 dark:text-gray-400">
                       National ID (NID)
                       <input
                         type="text"
                         {...register("nid", { required: true, maxLength: 10 })}
-                        className="input input-bordered w-full"
+                        className="input input-bordered w-full dark:bg-gray-700 dark:text-white dark:border-gray-600"
                         placeholder="NID Number"
                       />
-                      {errors.nid && <span className="text-red-500 text-sm">Valid NID required</span>}
+                      {errors.nid && <span className="text-red-500 dark:text-red-400 text-sm">Valid NID required</span>}
                     </label>
                   </div>
                 </section>
                 {/* Contact */}
                 <section>
-                  <h3 className="text-lg font-semibold mb-3">Contact Information</h3>
+                  <h3 className="text-lg font-semibold mb-3 dark:text-gray-300">Contact Information</h3>
                   <div className="grid grid-cols-2 gap-4">
-                    <label className="grid gap-1 text-gray-500">
+                    <label className="grid gap-1 text-gray-500 dark:text-gray-400">
                       Phone Number
                       <input
                         type="tel"
                         {...register("phone", { required: true })}
-                        className="input input-bordered w-full"
+                        className="input input-bordered w-full dark:bg-gray-700 dark:text-white dark:border-gray-600"
                         placeholder="e.g. 01XXXXXXXXX"
                       />
-                      {errors.phone && <span className="text-red-500 text-sm">Required</span>}
+                      {errors.phone && <span className="text-red-500 dark:text-red-400 text-sm">Required</span>}
                     </label>
 
 
-                    <label className="grid gap-1 text-gray-500">
+                    <label className="grid gap-1 text-gray-500 dark:text-gray-400">
                       Email Address
                       <input
                         type="email"
                         {...register("email", { required: true })}
-                        className="input input-bordered w-full"
+                        className="input input-bordered w-full dark:bg-gray-700 dark:text-white dark:border-gray-600"
                         placeholder="example@mail.com"
                       />
-                      {errors.email && <span className="text-red-500 text-sm">Valid email required</span>}
+                      {errors.email && <span className="text-red-500 dark:text-red-400 text-sm">Valid email required</span>}
                     </label>
                   </div>
                 </section>
                 {/* Address */}
                 <section>
-                  <h3 className="text-lg font-semibold mb-3">Address & Jurisdiction</h3>
+                  <h3 className="text-lg font-semibold mb-3 dark:text-gray-300">Address & Jurisdiction</h3>
                   <div className="grid grid-cols-2 gap-4">
-                    <label className="grid gap-1 text-gray-500">
+                    <label className="grid gap-1 text-gray-500 dark:text-gray-400">
                       Village / Area
-                      <input {...register("area", { required: true })} className="input input-bordered w-full" />
-                      {errors.area && <span className="text-red-500 text-sm">Required</span>}
+                      <input {...register("area", { required: true })} className="input input-bordered w-full dark:bg-gray-700 dark:text-white dark:border-gray-600" />
+                      {errors.area && <span className="text-red-500 dark:text-red-400 text-sm">Required</span>}
                     </label>
-                    <label className="grid gap-1 text-gray-500">
+                    <label className="grid gap-1 text-gray-500 dark:text-gray-400">
                       Union / Ward
-                      <input {...register("ward", { required: true })} className="input input-bordered w-full" />
-                      {errors.ward && <span className="text-red-500 text-sm">Required</span>}
+                      <input {...register("ward", { required: true })} className="input input-bordered w-full dark:bg-gray-700 dark:text-white dark:border-gray-600" />
+                      {errors.ward && <span className="text-red-500 dark:text-red-400 text-sm">Required</span>}
                     </label>
-                    <label className="grid gap-1 text-gray-500">
+                    <label className="grid gap-1 text-gray-500 dark:text-gray-400">
                       Thana
-                      <input {...register("thana", { required: true })} className="input input-bordered w-full" />
-                      {errors.thana && <span class="text-red-500 text-sm">Required</span>}
+                      <input {...register("thana", { required: true })} className="input input-bordered w-full dark:bg-gray-700 dark:text-white dark:border-gray-600" />
+                      {errors.thana && <span class="text-red-500 dark:text-red-400 text-sm">Required</span>}
                     </label>
-                    <label className="grid gap-1 text-gray-500">
+                    <label className="grid gap-1 text-gray-500 dark:text-gray-400">
                       District
-                      <input {...register("district", { required: true })} className="input input-bordered w-full" />
-                      {errors.district && <span className="text-red-500 text-sm">Required</span>}
+                      <input {...register("district", { required: true })} className="input input-bordered w-full dark:bg-gray-700 dark:text-white dark:border-gray-600" />
+                      {errors.district && <span className="text-red-500 dark:text-red-400 text-sm">Required</span>}
                     </label>
                   </div>
                 </section>
                 {/* Licence */}
                 <section>
-                  <h3 className="text-lg font-semibold mb-3">Kazi Licence Information</h3>
+                  <h3 className="text-lg font-semibold mb-3 dark:text-gray-300">Kazi Licence Information</h3>
                   <div className="grid grid-cols-2 gap-4">
-                    <label className="grid gap-1 text-gray-500">
+                    <label className="grid gap-1 text-gray-500 dark:text-gray-400">
                       Licence Number
                       <input
                         {...register("licenceNumber", { required: true })}
-                        className="input input-bordered w-full"
+                        className="input input-bordered w-full dark:bg-gray-700 dark:text-white dark:border-gray-600"
                         placeholder="Licence Number"
                       />
-                      {errors.licenceNumber && <span className="text-red-500 text-sm">Required</span>}
+                      {errors.licenceNumber && <span className="text-red-500 dark:text-red-400 text-sm">Required</span>}
                     </label>
-                    <label className="grid gap-1 text-gray-500">
+                    <label className="grid gap-1 text-gray-500 dark:text-gray-400">
                       Licence Document (JPG/JPEG/PNG)
                       <input
                         type="file"
                         accept="image/jpeg, image/jpg, image/png"
                         {...register("licenceFile", { required: true })}
-                        className="file-input file-input-bordered"
+                        className="file-input file-input-bordered dark:bg-gray-700 dark:text-white dark:border-gray-600"
                       />
-                      {errors.licenceFile && <span className="text-red-500 text-sm">Required</span>}
+                      {errors.licenceFile && <span className="text-red-500 dark:text-red-400 text-sm">Required</span>}
                     </label>
                   </div>
                 </section>
                 {/* education */}
                 <section>
-                  <h3 className="text-lg font-semibold mb-3">Additional Information (Optional)</h3>
+                  <h3 className="text-lg font-semibold mb-3 dark:text-gray-300">Additional Information (Optional)</h3>
                   <div className="grid grid-cols-2 gap-4">
-                    <label className="grid gap-1 text-gray-500">
+                    <label className="grid gap-1 text-gray-500 dark:text-gray-400">
                       Education Qualification
-                      <input {...register("education")} className="input input-bordered w-full" />
+                      <input {...register("education")} className="input input-bordered w-full dark:bg-gray-700 dark:text-white dark:border-gray-600" />
                     </label>
-                    <label className="grid gap-1 text-gray-500">
+                    <label className="grid gap-1 text-gray-500 dark:text-gray-400">
                       Previous Kazi Code (if any)
-                      <input {...register("prevKaziCode")} className="input input-bordered w-full" />
+                      <input {...register("prevKaziCode")} className="input input-bordered w-full dark:bg-gray-700 dark:text-white dark:border-gray-600" />
                     </label>
                   </div>
                 </section>
@@ -231,33 +231,33 @@ const BecomeKaziForm = () => {
           {/* STEP 2 */}
           {step === 2 && (
             <>
-              <h2 className="text-xl  font-semibold mb-4">Required Documents</h2>
+              <h2 className="text-xl font-semibold mb-4 dark:text-gray-300">Required Documents</h2>
 
               <div className="space-y-5">
                 {
                   requiredFields.map(([field, label]) => (
                     <div key={field}>
-                      <label className="font-medium text-gray-500">{label}</label>
+                      <label className="font-medium text-gray-500 dark:text-gray-400">{label}</label>
                       <input
                         type="file"
                         accept="image/*"
                         {...register(field, { required: true })}
-                        className="file-input file-input-bordered w-full"
+                        className="file-input file-input-bordered w-full dark:bg-gray-700 dark:text-white dark:border-gray-600"
                       />
                     </div>
                   ))
                 }
 
                 {/* condition */}
-                <div className="flex items-center gap-2">
-                  <input type="checkbox" {...register("agree", { required: true })} className="checkbox text-green-900" />
+                <div className="flex items-center gap-2 dark:text-gray-300">
+                  <input type="checkbox" {...register("agree", { required: true })} className="checkbox text-green-900 dark:accent-green-500" />
                   <span>I confirm all information is correct and I agree to follow all legal requirements.</span>
                 </div>
-                {errors.agree && <p className="text-red-500 text-sm">You must agree before submitting</p>}
+                {errors.agree && <p className="text-red-500 dark:text-red-400 text-sm">You must agree before submitting</p>}
               </div>
 
               <div className="flex justify-between mt-5">
-                <button type="button" className="btn btn-outline border border-green-900" onClick={() => setStep(1)}>Back</button>
+                <button type="button" className="btn btn-outline border border-green-900 dark:border-green-600 dark:text-green-600" onClick={() => setStep(1)}>Back</button>
                 <button type="submit" className="btn bg-gradient-to-r from-[#013223] to-[#006747] text-white">Submit</button>
               </div>
             </>
@@ -269,4 +269,3 @@ const BecomeKaziForm = () => {
 };
 
 export default BecomeKaziForm;
-

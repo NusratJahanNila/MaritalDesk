@@ -95,12 +95,12 @@ const Register = () => {
     }
 
     return (
-        <div className="hero bg-base-200 min-h-screen">
+        <div className="hero bg-base-200 min-h-screen mt-16">
 
 
             <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                 <div className="card-body">
-                    <h1 className="text-2xl text-center text-green-900 font-bold">Register now!</h1>
+                    <h1 className="text-2xl text-center text-green-900 dark:text-green-400 font-bold">Register now!</h1>
                     <form onSubmit={handleRegister}>
                         <fieldset className="fieldset">
                             <label className="label">Name</label>
@@ -154,7 +154,7 @@ const Register = () => {
                     </form>
                     <button
                         onClick={handleLoginWithGoogle}
-                        className='btn bg-white'><FcGoogle />Login with Google</button>
+                        className='btn bg-white dark:bg-gray-700 dark:text-gray-300'><FcGoogle />Login with Google</button>
 
                     <p>Already have any account?Please <Link
                         className='text-green-600 underline'

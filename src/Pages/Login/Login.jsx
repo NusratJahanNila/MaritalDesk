@@ -80,10 +80,10 @@ const Login = () => {
             });
     }
     return (
-        <div className="hero bg-base-200 min-h-screen">
+        <div className="hero bg-base-200 min-h-screen mt-6">
             <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                 <div className="card-body">
-                    <h1 className="text-2xl text-center text-green-900 font-bold">Login now!</h1>
+                    <h1 className="text-2xl text-center text-green-900 dark:text-green-400 font-bold">Login now!</h1>
                     <form onSubmit={handleLogin}>
                         <fieldset className="fieldset">
                             <label className="label">Email</label>
@@ -126,7 +126,7 @@ const Login = () => {
                     </form>
                     <button
                         onClick={handleLoginWithGoogle}
-                        className='btn bg-white'><FcGoogle />Login with Google
+                        className='btn bg-white dark:bg-gray-700 dark:text-gray-300'><FcGoogle />Login with Google
                     </button>
 
                     <p>Does not have any account?Please <Link
