@@ -7,10 +7,10 @@ import { IoIosDocument } from 'react-icons/io';
 
 const AboutUs = () => {
     return (
-        <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-12 px-4">
+        <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-20 px-4">
             <div className="max-w-6xl mx-auto">
                 {/* Header Section */}
-                <div className="text-center mb-12 animate-fade-in">
+                <div className="text-center mb-12 mt-4 animate-fade-in">
                     <h1 className="text-4xl md:text-5xl font-bold text-green-800 dark:text-green-300 mb-4 transition-all duration-300 hover:scale-105 hover:text-green-900 dark:hover:text-green-200 inline-block">
                         About MaritalDesk
                     </h1>

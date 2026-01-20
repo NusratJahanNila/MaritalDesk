@@ -39,10 +39,6 @@ const router = createBrowserRouter([
             },
 
             {
-                path: '/profile',
-                Component: Profile
-            },
-            {
                 path: '/become-kazi',
                 Component: BecomeKaziForm,
             },
@@ -90,6 +86,11 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/adminDashboard',
                 Component: AdminDashboard,
+            },
+            
+            {
+                path: '/dashboard/profile',
+                Component: Profile
             },
         ]
     }

@@ -1,13 +1,41 @@
-import React, { use } from 'react';
+import { use, useEffect, useState } from 'react';
 import logoImg from '../../assets/Maritaldesk.jpeg'
 import { AuthContext } from '../../Provider/AuthContext';
 import { toast } from 'react-toastify';
 import { Link, NavLink, Outlet } from 'react-router';
-import { HeartHandshake, HeartCrack, ScrollText, User, } from "lucide-react";
+import { HeartHandshake,  Sun, Moon, ScrollText, User,LayoutDashboard  } from "lucide-react";
 import { GrDashboard } from 'react-icons/gr';
 
 const DashboardLayout = () => {
     const { user, logout } = use(AuthContext);
+    const [isProfileOpen, setIsProfileOpen] = useState(false);
+    
+        // Theme state
+        const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+        
+        // Apply theme on mount and when theme changes
+        useEffect(() => {
+            const html = document.querySelector("html");
+            html.setAttribute("data-theme", theme);
+            localStorage.setItem("theme", theme);
+        }, [theme]);
+    
+        // Handle theme toggle
+        const handleThemeToggle = () => {
+            setTheme(prev => prev === "light" ? "dark" : "light");
+        };
+    
+        // Close dropdown when clicking outside
+        useEffect(() => {
+            const handleClickOutside = (event) => {
+                if (isProfileOpen && !event.target.closest('.profile-dropdown-container')) {
+                    setIsProfileOpen(false);
+                }
+            };
+            document.addEventListener('click', handleClickOutside);
+            return () => document.removeEventListener('click', handleClickOutside);
+        }, [isProfileOpen]);
+    
 
     // Logout
     const handleLogout = (e) => {
@@ -25,39 +53,137 @@ const DashboardLayout = () => {
             <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content">
                 {/* Navbar */}
-                <div className="navbar  max-w-6xl mx-auto">
-                    <div className="navbar-start">
-                        <label htmlFor="my-drawer-4" aria-label="open sidebar" className="btn btn-square btn-ghost">
-                            {/* Sidebar toggle icon */}
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" strokeLinejoin="round" strokeLinecap="round" strokeWidth="2" fill="none" stroke="currentColor" className="my-1.5 inline-block size-4"><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path><path d="M9 4v16"></path><path d="M14 10l2 2l-2 2"></path></svg>
-                        </label>
-                        <Link to='/' className=" text-xl flex items-center justify-center gap-1">
-                            <img
-                                src={logoImg}
-                                alt="logo"
-                                className='w-15 hidden md:block'
-                            />
-                            <span className='text-4xl font-light text-orange-600'>|</span>
-                            <span className='font-bold sm:text-2xl text-green-800'>MaritalDesk</span>
-                        </Link>
-                    </div>
-                    <div className='navbar-end '>
-                        <div >
-                            {
-                                user && user.photoURL ? <div className="mr-2 flex items-center gap-2">
-                                    <img
-                                        src={user.photoURL}
-                                        alt="user"
-                                        referrerPolicy="no-referrer"
-                                        className='rounded-full w-8 h-8' />
-                                    <button onClick={handleLogout} className="btn bg-gradient-to-r from-[#013223] to-[#006747] text-white">Logout</button>
-                                </div> : <Link to='/auth/login' className="btn bg-gradient-to-r from-[#013223] to-[#006747] text-white">Login</Link>
-                            }
+                <div className='bg-base-100 dark:bg-gray-900 shadow-lg dark:shadow-gray-800/30 border-b-2 border-gray-200 dark:border-gray-500 top-0 left-0 fixed right-0 z-1'>
+                    <div className="navbar max-w-6xl mx-auto ">
+                        <div className="navbar-start">
+                            <Link to='/' className="text-xl flex items-center justify-center gap-1">
+                                <img
+                                    src={logoImg}
+                                    alt="logo"
+                                    className='w-15 hidden md:block'
+                                />
+                                <span className='text-4xl font-light text-orange-600 dark:text-orange-400'>|</span>
+                                <span className='font-bold sm:text-2xl text-green-800 dark:text-green-300'>MaritalDesk</span>
+                            </Link>
+                        </div>
+                        <div className='navbar-end'>
+                            {/* Theme Toggle */}
+                            <div className="mr-4">
+                                <button
+                                    onClick={handleThemeToggle}
+                                    className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                                    aria-label="Toggle theme"
+                                >
+                                    {theme === "light" ? (
+                                        <Moon className="w-5 h-5 text-gray-600 dark:text-gray-300" />
+                                    ) : (
+                                        <Sun className="w-5 h-5 text-yellow-400" />
+                                    )}
+                                </button>
+                            </div>
+
+                            {/* User Profile and Auth */}
+                            <div>
+                                {user ? (
+                                    <div className="profile-dropdown-container relative">
+                                        {/* Profile Dropdown Trigger */}
+                                        <button
+                                            onClick={() => setIsProfileOpen(!isProfileOpen)}
+                                            className="flex items-center gap-2 p-1.5 rounded-full bg-gray-100 hover:bg-gray-200 dark:hover:bg-gray-800 transition-all duration-200"
+                                        >
+                                            <img
+                                                src={user.photoURL || '/default-avatar.png'}
+                                                alt="user"
+                                                referrerPolicy="no-referrer"
+                                                className='rounded-full w-10 h-10 border-2 border-white dark:border-gray-700'
+                                            />
+                                            <svg
+                                                className="w-4 h-4 text-gray-600 dark:text-gray-300"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                viewBox="0 0 24 24"
+                                            >
+                                                <path
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                    strokeWidth="2"
+                                                    d="M19 9l-7 7-7-7"
+                                                />
+                                            </svg>
+                                        </button>
+
+                                        {/* Profile Dropdown Menu */}
+                                        {isProfileOpen && (
+                                            <div className="absolute right-0 mt-2 w-48 rounded-lg bg-white dark:bg-gray-800 shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden z-50">
+                                                {/* User Info */}
+                                                <div className="px-4 py-3 border-b border-gray-100 dark:border-gray-700">
+                                                    <p className="font-semibold text-gray-800 dark:text-white truncate">
+                                                        {user.displayName || user.email}
+                                                    </p>
+                                                    <p className="text-sm text-gray-500 dark:text-gray-400 truncate">
+                                                        {user.email}
+                                                    </p>
+                                                </div>
+
+                                                {/* Menu Items */}
+                                                <div className="py-2">
+                                                    <Link
+                                                        to="/profile"
+                                                        className="flex items-center gap-3 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 transition-colors"
+                                                        onClick={() => setIsProfileOpen(false)}
+                                                    >
+                                                        <div className="w-6 h-6 flex items-center justify-center">
+                                                            👤
+                                                        </div>
+                                                        <span>Profile</span>
+                                                    </Link>
+
+                                                    <Link
+                                                        to="/dashboard"
+                                                        className="flex items-center gap-3 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 transition-colors"
+                                                        onClick={() => setIsProfileOpen(false)}
+                                                    >
+                                                        <div className="w-6 h-6 flex items-center justify-center">
+                                                            📊
+                                                        </div>
+                                                        <span>Dashboard</span>
+                                                    </Link>
+
+                                                    <Link
+                                                        to="/dashboard/userDashboard"
+                                                        className="flex items-center gap-3 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 transition-colors"
+                                                        onClick={() => setIsProfileOpen(false)}
+                                                    >
+                                                        <div className="w-6 h-6 flex items-center justify-center">
+                                                            🏠
+                                                        </div>
+                                                        <span>My Dashboard</span>
+                                                    </Link>
+
+                                                    <button
+                                                        onClick={handleLogout}
+                                                        className="flex items-center gap-3 w-full px-4 py-2 hover:bg-red-50 dark:hover:bg-red-900/20 text-red-600 dark:text-red-400 transition-colors border-t border-gray-100 dark:border-gray-700 mt-2"
+                                                    >
+                                                        <div className="w-6 h-6 flex items-center justify-center">
+                                                            🚪
+                                                        </div>
+                                                        <span>Logout</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        )}
+                                    </div>
+                                ) : (
+                                    <Link to='/auth/login' className="btn bg-gradient-to-r from-[#013223] to-[#006747] text-white">
+                                        Login
+                                    </Link>
+                                )}
+                            </div>
                         </div>
                     </div>
                 </div>
                 {/* Page content here */}
-                <div className="bg-base-300 min-h-screen">
+                <div className="bg-base-300 min-h-screen pt-20">
                     <Outlet></Outlet>
                 </div>
             </div>
@@ -82,7 +208,7 @@ const DashboardLayout = () => {
                             <li className='hover:text-yellow-400'>
                                 <div className="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Dashboard">
                                     <div >
-                                        <GrDashboard size={18} />
+                                        <LayoutDashboard size={18} />
                                     </div>
                                     <span className="is-drawer-close:hidden">
                                         Dashboard
@@ -93,12 +219,12 @@ const DashboardLayout = () => {
 
                         <NavLink to='/dashboard/marriage-application-form'>
                             <li className='hover:text-yellow-400'>
-                                <div className="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Marriage Requests">
+                                <div className="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Marriage Application">
                                     <div >
                                         <HeartHandshake size={18} />
                                     </div>
                                     <span className="is-drawer-close:hidden">
-                                        Marriage Requests
+                                        Marriage Application
                                     </span>
                                 </div>
                             </li>
@@ -116,7 +242,7 @@ const DashboardLayout = () => {
                                 </div>
                             </li>
                         </NavLink>
-                        <NavLink to='/dashboard/marriage-application-form'>
+                        <NavLink to='/dashboard/profile'>
                             <li className='hover:text-yellow-400'>
                                 <div className="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Profile">
                                     <div >

@@ -104,27 +104,6 @@ const CallToActionSection = () => {
                         </Link>
                     </div>
 
-                    {/* Stats */}
-                    <div className="mt-12 pt-8 border-t border-green-300/30">
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                            <div className="text-center">
-                                <div className="text-3xl font-bold text-white dark:text-green-300 mb-2">10K+</div>
-                                <div className="text-green-200 dark:text-green-400">Registered Users</div>
-                            </div>
-                            <div className="text-center">
-                                <div className="text-3xl font-bold text-white dark:text-green-300 mb-2">500+</div>
-                                <div className="text-green-200 dark:text-green-400">Certified Kazis</div>
-                            </div>
-                            <div className="text-center">
-                                <div className="text-3xl font-bold text-white dark:text-green-300 mb-2">95%</div>
-                                <div className="text-green-200 dark:text-green-400">User Satisfaction</div>
-                            </div>
-                            <div className="text-center">
-                                <div className="text-3xl font-bold text-white dark:text-green-300 mb-2">24/7</div>
-                                <div className="text-green-200 dark:text-green-400">Support Available</div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, use } from 'react';
 import { Link, NavLink } from 'react-router';
 import logoImg from '../../assets/Maritaldesk.jpeg'
 import { AuthContext } from '../../Provider/AuthContext';
@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 import { Sun, Moon } from 'lucide-react';
 
 const Navbar = () => {
-    const { user, logout } = React.use(AuthContext);
+    const { user, logout } = use(AuthContext);
     const [isProfileOpen, setIsProfileOpen] = useState(false);
 
     // Theme state
@@ -59,18 +59,6 @@ const Navbar = () => {
                 Home
             </NavLink>
         </li>
-
-        {/* <li className='text-lg font-bold'>
-            <NavLink
-                to='/services'
-                className={({ isActive }) => 
-                    isActive 
-                        ? 'btn bg-gradient-to-r from-[#013223] to-[#006747] text-white' 
-                        : 'text-green-800 dark:text-green-200'
-                }>
-                Services
-            </NavLink>
-        </li> */}
 
         {/* Conditional Dashboard links based on user role */}
         {user && (
@@ -146,8 +134,8 @@ const Navbar = () => {
     </>
 
     return (
-        <div className='bg-base-100 dark:bg-gray-900 shadow-lg dark:shadow-gray-800/30'>
-            <div className="navbar max-w-6xl mx-auto">
+        <div className='bg-base-100 dark:bg-gray-900 shadow-lg dark:shadow-gray-800/30 border-b-2 border-gray-200 dark:border-gray-500 top-0 left-0 fixed right-0 z-1'>
+            <div className="navbar max-w-6xl mx-auto ">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden dark:text-white">

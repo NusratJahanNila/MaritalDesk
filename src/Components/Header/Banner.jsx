@@ -16,7 +16,7 @@ const Banner = () => {
   
     return (
     <div className='bg-gradient-to-r from-[#013223] via-[#006747] to-[#014B34] dark:from-gray-900 dark:via-gray-800 dark:to-gray-900'>
-        <div className="hero max-w-6xl mx-auto py-6 md:py-10 px-4">
+        <div className="hero max-w-6xl mx-auto py-10 md:py-16 px-4">
             <div className="hero-content text-center">
                 <div className="max-w-2xl">
                     <img
@@ -29,7 +29,7 @@ const Banner = () => {
                     <h1 className='text-white text-4xl md:text-5xl font-bold  transition-all duration-300 hover:scale-105' data-aos="fade-down">
                         MaritalDesk
                     </h1>
-                    <p className="pb-6 pt-3 text-white/90 text-lg leading-relaxed transition-colors duration-300 hover:text-white" data-aos="fade-up">
+                    <p className="pb-6 pt-3 text-white/70 text-lg leading-relaxed transition-colors duration-300 hover:text-white" data-aos="fade-up">
                         We didn't just digitalize marriage registration.
                         We engineered a secure, automated, and verifiable marriage ecosystem with validation, digital certification, and role-based authority — built for Bangladesh's future e-governance framework.
                     </p>

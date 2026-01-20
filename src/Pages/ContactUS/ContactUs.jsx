@@ -133,7 +133,7 @@ const ContactUs = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gray-50 dark:bg-gray-900 pt-20">
+        <div className="min-h-screen bg-gray-50 dark:bg-gray-900 pt-18">
             {/* Hero Section */}
             <div className="bg-gradient-to-r from-[#013223] to-[#006747] dark:from-gray-900 dark:to-gray-800 text-white py-12">
                 <div className="max-w-6xl mx-auto px-4">
@@ -178,7 +178,7 @@ const ContactUs = () => {
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                     {/* Left Column: Contact Form */}
-                    <div className="">
+                    <div className="space-y-2">
                         <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
                             <div className="flex items-center gap-3 mb-6">
                                 <div className="w-12 h-12 rounded-full bg-gradient-to-r from-green-100 to-teal-100 dark:from-green-900/30 dark:to-teal-900/30 flex items-center justify-center">
