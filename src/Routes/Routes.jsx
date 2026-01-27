@@ -18,6 +18,7 @@ import DashboardHome from "../Layout/DashboardLayout/Dashboard/DashboardHome";
 import ContactUs from "../Pages/ContactUS/ContactUs";
 import MarraigeRequests from "../Layout/DashboardLayout/Dashboard/KaziDashboard/MarraigeRequests/MarraigeRequests";
 import MarriageVerification from "../Layout/DashboardLayout/Dashboard/AdminDashboard/MarriageVerification/MarriageVerification";
+import MarriageCertificate from "../Layout/DashboardLayout/Dashboard/UserDashboard/Certificate/MarriageCertificate";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -88,6 +89,10 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/marriage-application-form',
                 Component: MarriageApplicationForm
+            },
+            {
+                path: '/dashboard/marriage-certificate',
+                Component: MarriageCertificate
             },
             {
                 path: '/dashboard/adminDashboard',

@@ -261,7 +261,7 @@ const DashboardLayout = () => {
                             </li>
                         </NavLink>
 
-                        <NavLink to='/dashboard/marriage-application-form'>
+                        <NavLink to='/dashboard/marriage-certificate'>
                             <li className='hover:text-yellow-400'>
                                 <div className="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Certificates">
                                     <div >
