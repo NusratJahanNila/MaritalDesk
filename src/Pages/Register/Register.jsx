@@ -88,6 +88,7 @@ const Register = () => {
                 // Signed up 
                 const user = result.user;
                 setUser(user);
+                navigate('/')
             })
             .catch((error) => {
                 console.log(error);

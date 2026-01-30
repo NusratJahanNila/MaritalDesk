@@ -63,7 +63,7 @@ const Navbar = () => {
         {/* Conditional Dashboard links based on user role */}
         {user && (
             <>
-                <li className='text-lg font-bold'>
+                {/* <li className='text-lg font-bold'>
                     <NavLink
                         to='/dashboard/userDashboard'
                         className={({ isActive }) => 
@@ -73,7 +73,7 @@ const Navbar = () => {
                         }>
                         Dashboard
                     </NavLink>
-                </li>
+                </li> */}
 
                 {/* Only show Kazi link if user has kazi role */}
                 {user?.role === 'kazi' && (
@@ -226,7 +226,7 @@ const Navbar = () => {
                                         {/* Menu Items */}
                                         <div className="py-2">
                                             <Link
-                                                to="/profile"
+                                                to="/dashboard/profile"
                                                 className="flex items-center gap-3 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 transition-colors"
                                                 onClick={() => setIsProfileOpen(false)}
                                             >
@@ -247,7 +247,7 @@ const Navbar = () => {
                                                 <span>Dashboard</span>
                                             </Link>
 
-                                            <Link
+                                            {/* <Link
                                                 to="/dashboard/userDashboard"
                                                 className="flex items-center gap-3 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 transition-colors"
                                                 onClick={() => setIsProfileOpen(false)}
@@ -256,7 +256,7 @@ const Navbar = () => {
                                                     🏠
                                                 </div>
                                                 <span>My Dashboard</span>
-                                            </Link>
+                                            </Link> */}
 
                                             <button
                                                 onClick={handleLogout}

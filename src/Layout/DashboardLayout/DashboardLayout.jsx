@@ -156,17 +156,6 @@ const DashboardLayout = () => {
                                                         <span>Dashboard</span>
                                                     </Link>
 
-                                                    <Link
-                                                        to="/dashboard/userDashboard"
-                                                        className="flex items-center gap-3 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 transition-colors"
-                                                        onClick={() => setIsProfileOpen(false)}
-                                                    >
-                                                        <div className="w-6 h-6 flex items-center justify-center">
-                                                            🏠
-                                                        </div>
-                                                        <span>My Dashboard</span>
-                                                    </Link>
-
                                                     <button
                                                         onClick={handleLogout}
                                                         className="flex items-center gap-3 w-full px-4 py-2 hover:bg-red-50 dark:hover:bg-red-900/20 text-red-600 dark:text-red-400 transition-colors border-t border-gray-100 dark:border-gray-700 mt-2"
