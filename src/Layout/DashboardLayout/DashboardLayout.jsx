@@ -7,6 +7,7 @@ import { Sun, Moon, ScrollText, User, LayoutDashboard } from "lucide-react";
 import { FaWpforms } from "react-icons/fa";
 import { FaListCheck } from "react-icons/fa6";
 import { GrDocumentVerified } from "react-icons/gr";
+import { MdOutlinePayments } from "react-icons/md";
 
 
 const DashboardLayout = () => {
@@ -212,7 +213,6 @@ const DashboardLayout = () => {
                                 </div>
                             </li>
                         </NavLink>
-
                         <NavLink to='/dashboard/marriage-application-form'>
                             <li className='hover:text-yellow-400'>
                                 <div className="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Marriage Application">
@@ -221,6 +221,18 @@ const DashboardLayout = () => {
                                     </div>
                                     <span className="is-drawer-close:hidden">
                                         Marriage Application
+                                    </span>
+                                </div>
+                            </li>
+                        </NavLink>
+                        <NavLink to='/dashboard/payment'>
+                            <li className='hover:text-yellow-400'>
+                                <div className="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Payment">
+                                    <div >
+                                        <MdOutlinePayments size={18} />
+                                    </div>
+                                    <span className="is-drawer-close:hidden">
+                                        Payment
                                     </span>
                                 </div>
                             </li>

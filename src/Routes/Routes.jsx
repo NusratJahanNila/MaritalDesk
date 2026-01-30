@@ -19,6 +19,7 @@ import ContactUs from "../Pages/ContactUS/ContactUs";
 import MarraigeRequests from "../Layout/DashboardLayout/Dashboard/KaziDashboard/MarraigeRequests/MarraigeRequests";
 import MarriageVerification from "../Layout/DashboardLayout/Dashboard/AdminDashboard/MarriageVerification/MarriageVerification";
 import MarriageCertificate from "../Layout/DashboardLayout/Dashboard/UserDashboard/Certificate/MarriageCertificate";
+import Payment from "../Layout/DashboardLayout/Dashboard/UserDashboard/Payment/Payment";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -89,6 +90,10 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/marriage-application-form',
                 Component: MarriageApplicationForm
+            },
+            {
+                path: '/dashboard/payment',
+                Component: Payment
             },
             {
                 path: '/dashboard/marriage-certificate',
