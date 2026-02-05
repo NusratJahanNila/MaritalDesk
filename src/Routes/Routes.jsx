@@ -20,6 +20,8 @@ import MarraigeRequests from "../Layout/DashboardLayout/Dashboard/KaziDashboard/
 import MarriageVerification from "../Layout/DashboardLayout/Dashboard/AdminDashboard/MarriageVerification/MarriageVerification";
 import MarriageCertificate from "../Layout/DashboardLayout/Dashboard/UserDashboard/Certificate/MarriageCertificate";
 import Payment from "../Layout/DashboardLayout/Dashboard/UserDashboard/Payment/Payment";
+import PaymentSuccess from "../Layout/DashboardLayout/Dashboard/UserDashboard/Payment/PaymentSuccess";
+import PaymentCancel from "../Layout/DashboardLayout/Dashboard/UserDashboard/Payment/PaymentCancel";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -45,6 +47,10 @@ const router = createBrowserRouter([
             {
                 path: '/become-kazi',
                 Component: BecomeKaziForm,
+            },
+            {
+                path: '/payment-cancel',
+                Component: PaymentCancel,
             },
 
         ]
@@ -94,6 +100,10 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/payment',
                 Component: Payment
+            },
+            {
+                path: '/dashboard/payment-success',
+                Component: PaymentSuccess
             },
             {
                 path: '/dashboard/marriage-certificate',
