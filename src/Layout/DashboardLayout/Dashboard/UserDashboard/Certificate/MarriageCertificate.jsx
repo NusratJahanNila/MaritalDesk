@@ -91,7 +91,7 @@ const MarriageCertificate = ({
       >
         {/* Header border simulation */}
         <div className="relative border-b-4 border-[#0a7d2c] pb-1">
-          <div className="absolute inset-0 opacity-[0.07] pointer-events-none select-none text-[8rem] leading-none font-black text-center text-green-900">
+          <div className="absolute inset-0 opacity-[0.07] pointer-events-none select-none text-[7rem] leading-none font-black text-center text-green-900">
             গণপ্রজাতন্ত্রী বাংলাদেশ
           </div>
 
@@ -114,7 +114,7 @@ const MarriageCertificate = ({
 
         {/* Main content */}
         <div className="p-8 md:p-12 bg-white relative">
-          <div className="space-y-7 text-lg leading-relaxed">
+          <div className="space-y-7 text-lg text-black leading-relaxed">
             <p className="text-center font-semibold text-xl mb-10 underline decoration-2 decoration-green-800">
               This is to certify that,
             </p>
