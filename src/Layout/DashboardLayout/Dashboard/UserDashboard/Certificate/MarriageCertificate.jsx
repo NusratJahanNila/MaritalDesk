@@ -87,7 +87,7 @@ const MarriageCertificate = ({
     <div className="py-8">
       <div
         ref={certificateRef}
-        className="max-w-4xl mx-auto  bg-white shadow-2xl border-4 border-[#0a7d2c] rounded-sm font-serif overflow-hidden"
+        className="max-w-4xl mx-auto  bg-white shadow-2xl  rounded-sm font-serif overflow-hidden"
       >
         {/* Header border simulation */}
         <div className="relative border-b-4 border-[#0a7d2c] pb-1">

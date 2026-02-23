@@ -134,6 +134,7 @@ const ContactUs = () => {
 
     return (
         <div className="min-h-screen bg-gray-50 dark:bg-gray-900 pt-18">
+            <title>Contact Us | MaritalDesk</title>
             {/* Hero Section */}
             <div className="bg-gradient-to-r from-[#013223] to-[#006747] dark:from-gray-900 dark:to-gray-800 text-white py-12">
                 <div className="max-w-6xl mx-auto px-4">

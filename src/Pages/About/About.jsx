@@ -8,6 +8,7 @@ import { IoIosDocument } from 'react-icons/io';
 const AboutUs = () => {
     return (
         <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-20 px-4">
+            <title>About Us | MaritalDesk</title>
             <div className="max-w-6xl mx-auto">
                 {/* Header Section */}
                 <div className="text-center mb-12 mt-4 animate-fade-in">

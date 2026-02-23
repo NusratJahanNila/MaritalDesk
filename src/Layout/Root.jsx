@@ -8,6 +8,7 @@ import { ToastContainer } from 'react-toastify';
 const Root = () => {
     return (
         <div>
+            <title>Home | MaritalDesk</title>
             <Navbar></Navbar>
             
             <main className='min-h-[50vh] '>

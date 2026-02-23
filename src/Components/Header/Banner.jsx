@@ -22,7 +22,7 @@ const Banner = () => {
     ];
 
     return (
-        <div className='bg-gradient-to-r from-[#013223] via-[#006747] to-[#014B34] dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 mt-8'>
+        <div className='bg-gradient-to-r from-[#013223] via-[#006747] to-[#014B34] dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 mt-16 md:mt-8'>
             <div className="max-w-6xl mx-auto py-8 md:py-16 px-4">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
                     
