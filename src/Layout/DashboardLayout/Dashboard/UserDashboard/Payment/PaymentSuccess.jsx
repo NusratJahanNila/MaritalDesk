@@ -138,7 +138,7 @@ const PaymentSuccess = () => {
                   className='flex justify-between items-center py-2 border-b border-gray-100'
                 >
                   <span className='text-gray-600'>{item.name}</span>
-                  <span className='font-medium'>৳{item.amount}</span>
+                  <span className='font-medium dark:text-gray-900'>৳{item.amount}</span>
                 </div>
               ))}
 
